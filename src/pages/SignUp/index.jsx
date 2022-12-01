@@ -80,7 +80,6 @@ export function SignUp(){
         </div>
 
         <OrderButton 
-          add
           title="Cadastrar"
           onClick={handleSignUp}
         />

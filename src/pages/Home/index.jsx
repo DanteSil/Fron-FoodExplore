@@ -112,7 +112,7 @@ export function Home() {
         },
         loop: true
       });
-    }, 200);
+    }, 1000);
   }, []);
 
   useEffect(() => {
@@ -159,7 +159,7 @@ export function Home() {
   useEffect(() => {
       localStorage.setItem("@foodexplore:fav", JSON.stringify(favoriteDishes));
   }, [favoriteDishes]);
-
+  
   return(
     <Container>
       <Header 

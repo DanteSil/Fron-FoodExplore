@@ -13,8 +13,12 @@ export function SignIn(){
 
   const { signIn } = useAuth();
 
-  async function handleSignIn(){
-    await signIn({email, password});
+  function handleSignIn(){
+    if(!email || !password){
+      return alert("Preencha todos os campos")
+    }
+
+    signIn({email, password: String(password)});
   };
 
   return (
@@ -46,7 +50,6 @@ export function SignIn(){
         </div>
 
         <OrderButton 
-          add
           title="Entrar"
           onClick={handleSignIn}
         />

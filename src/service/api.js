@@ -1,7 +1,6 @@
 // Pre-config for API access
-
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "http://localhost:3333"
+  baseURL: 'https://api-rocketnotes2097.onrender.com'
 });
