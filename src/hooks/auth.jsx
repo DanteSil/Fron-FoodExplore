@@ -6,9 +6,11 @@ const AuthContext = createContext({});
 
 function AuthProvider({children}) {
   const [data, setData] = useState({});
-  
+  const [isLoading, setIsLoading] = useState(false)
+
   async function signIn({ email, password }){
     try {
+      setIsLoading(true)
       const response = await api.post('/session', { email, password });
       const { user, token } = response.data;
 
@@ -26,6 +28,7 @@ function AuthProvider({children}) {
         alert('Não foi possível entrar.');
       };
     };
+    setIsLoading(false)
   };
 
   function signOut() {
@@ -51,9 +54,11 @@ function AuthProvider({children}) {
 
   return(
     <AuthContext.Provider value={{ 
-      signIn, 
       user: data.user,
       signOut,
+      setIsLoading,
+      isLoading,
+      signIn, 
     }}>
       {children}
     </AuthContext.Provider>

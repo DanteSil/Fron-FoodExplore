@@ -12,10 +12,11 @@ export function SignUp(){
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setIsLoading] = useState(false)
 
   const navigate = useNavigate()
 
-  function handleSignUp(){
+  async function handleSignUp(){
 
     if(!name || !email || !password){
       return alert("Preencha todos os campos para continuar")
@@ -25,7 +26,9 @@ export function SignUp(){
       return alert("A senha precisa ter no mínimo 6 caracteres!")
     };
 
-    api.post("/users", { name, email, password })
+    setIsLoading(true)
+
+    await api.post("/users", { name, email, password })
     .then(() => {
       alert("Usuário cadastrado com sucesso!"),
       navigate(-1)
@@ -37,6 +40,7 @@ export function SignUp(){
         return alert("não foi possível cadastrar");
       }
     })
+    setIsLoading(false)
   }
 
   return (
@@ -62,7 +66,7 @@ export function SignUp(){
         <div className="input-wrapper">
           <label htmlFor="email">Email</label>
           <input 
-            type="text" 
+            type="email" 
             name="email" 
             placeholder="Exemplo: exemplo@exemplo.com.br"
             onChange={e => setEmail(e.target.value)}
@@ -80,8 +84,9 @@ export function SignUp(){
         </div>
 
         <OrderButton 
-          title="Cadastrar"
+          title={isLoading ? "cadastrando..." : "Cadastrar"}
           onClick={handleSignUp}
+          disabled={isLoading}
         />
 
         <a href="/">Já tenho uma conta</a>

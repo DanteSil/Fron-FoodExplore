@@ -11,13 +11,12 @@ export function SignIn(){
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const { signIn } = useAuth();
+  const { signIn, isLoading } = useAuth();
 
   function handleSignIn(){
     if(!email || !password){
       return alert("Preencha todos os campos")
     }
-
     signIn({email, password: String(password)});
   };
 
@@ -34,7 +33,7 @@ export function SignIn(){
         <div className="input-wrapper">
           <label htmlFor="email">Email</label>
           <input 
-            type="text" name="email" 
+            type="email" name="email" 
             placeholder="Exemplo: exemplo@exemplo.com.br"
             onChange={e => setEmail(e.target.value)}
           />
@@ -50,8 +49,9 @@ export function SignIn(){
         </div>
 
         <OrderButton 
-          title="Entrar"
+          title={isLoading ? "Entrando..." : "Entrar"}
           onClick={handleSignIn}
+          disabled={isLoading}
         />
 
         <a href="/register">Criar uma conta</a>
