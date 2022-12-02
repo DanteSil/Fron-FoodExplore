@@ -6,6 +6,7 @@ import {OrderButton} from '../../components/OrderButton';
 
 import { useAuth } from "../../hooks/auth";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export function SignIn(){
   const [email, setEmail] = useState('');
@@ -54,7 +55,7 @@ export function SignIn(){
           disabled={isLoading}
         />
 
-        <a href="/register">Criar uma conta</a>
+        <Link href="/register">Criar uma conta</Link>
       </form>
     </Container>
   );
