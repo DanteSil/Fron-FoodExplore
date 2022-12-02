@@ -50,16 +50,14 @@ export function DishUpdate(){
   };
   
   function handleEditFood(){
-    if(!name || !price || !description){
-      return alert("O prato precisa de nome, descrição, imagem e preço.");
+    if(!name || !price || !description || !dishImage){
+      return alert("O prato precisa de um nome, descrição, imagem e preço.");
     };
 
     const fileData = new FormData();
 
-    if(dishImage){
-      fileData.append("dishImg", dishImage);
-    };
-  
+    fileData.append("dishImg", dishImage);
+
     fileData.append("data", JSON.stringify({
       name,
       description,
@@ -69,10 +67,9 @@ export function DishUpdate(){
     }));
 
     try {
-      api.put(`/dishes/${params.id}`, fileData);
+    api.put(`/dishes/${params.id}`, fileData);
 
-      alert("prato atualizado.");
-      navigate('/') ;
+    alert("prato atualizado.");
     } catch (error) {
       if(error.response){
         alert(error.response.data.message);
@@ -80,6 +77,7 @@ export function DishUpdate(){
         alert("não foi possível cadastrar o prato!");
       };
     };
+    navigate('/') 
   };
 
   useEffect(() => {
@@ -190,8 +188,8 @@ export function DishUpdate(){
           </div>
           
           <div className="btn-footer">
-            <button onClick={handleRemove} className="add-food">Excluir prato</button>
-            <button onClick={handleEditFood} className="add-food">Atualizar prato</button>
+            <button type="button" onClick={handleRemove} className="add-food">Excluir prato</button>
+            <button type="button" onClick={handleEditFood} className="add-food">Atualizar prato</button>
           </div>
         </form>
       </main>

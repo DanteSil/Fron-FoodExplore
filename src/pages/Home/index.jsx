@@ -112,7 +112,7 @@ export function Home() {
         },
         loop: true
       });
-    }, 1000);
+    }, 2000);
   }, []);
 
   useEffect(() => {

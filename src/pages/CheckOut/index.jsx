@@ -17,6 +17,8 @@ import { useNavigate } from "react-router-dom";
 import { api } from "../../service/api";
 
 export function CheckOut() {
+  const [isLoadingBtn, setIsLoadingBtn] = useState(false);
+
   const [isPix, setIsPix] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [total, setTotal] = useState(0);
@@ -40,6 +42,11 @@ export function CheckOut() {
 
   async function handleFinalizePayment(){
     try {
+      if(orders.length == 0){
+        return alert("O seu carrinho está vazio no momento")
+      }
+      
+      setIsLoadingBtn(true)
       await api.post("/orders", {details, paymentMethod});
     } catch (error) {
       if(error.response){
@@ -54,6 +61,8 @@ export function CheckOut() {
     localStorage.setItem("@foodexplore:order", []);
 
     alert("Pedido realizado com sucesso.");
+
+    setIsLoadingBtn(false)
 
     return navigate("/orders");
   }
@@ -123,11 +132,10 @@ export function CheckOut() {
                       <img src={PixQrCode} alt="Qr Code" />  
                     </div>
                     <OrderButton 
-                      title={isLoading ? 'Carregando...' : 'Finalizar pagamento'}
+                      title={isLoadingBtn ? 'Carregando...' : 'Finalizar pagamento'}
                       img={myOrders}
-                      add
                       onClick={e => handleFinalizePayment()}
-                      disabled={isLoading ? true : false}
+                      disabled={isLoadingBtn ? true : false}
                     />
                   </div>
 
@@ -152,11 +160,10 @@ export function CheckOut() {
                       </div>
                     </section>
                     <OrderButton 
-                      title={isLoading ? 'Carregando...' : 'Finalizar pagamento'}
+                      title={isLoadingBtn ? 'Processando...' : 'Finalizar pagamento'}
                       img={myOrders}
-                      add
                       onClick={e => handleFinalizePayment()}
-                      disabled={isLoading ? true : false}
+                      disabled={isLoadingBtn ? true : false}
                     />
                   </div>
                 </div>

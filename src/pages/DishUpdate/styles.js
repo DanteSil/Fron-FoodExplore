@@ -19,6 +19,18 @@ export const Container = styled.div`
       display: none;
     }
 
+    input[type="text"] {
+      ::placeholder{
+        color: ${({ theme }) => theme.COLORS.WHITE};
+      }
+    }
+
+    input[type=""] {
+      ::placeholder{
+        color: ${({ theme }) => theme.COLORS.WHITE};
+      }
+    }
+
     input{
       color: ${({ theme }) => theme.COLORS.WHITE};
 

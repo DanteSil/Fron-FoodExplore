@@ -103,7 +103,7 @@ export function Header({toggleFavorite, quantity }) {
             img={myOrders} 
             alt="Lista de pedidos"
             quantity={admin ? '' : quantity}
-            add={admin ? true : false}
+            add={admin ? false : true}
             onClick={handleOrder}
           />
         </div>

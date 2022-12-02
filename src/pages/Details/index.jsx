@@ -109,7 +109,7 @@ export function Details() {
         </div>
 
         <div className='order-button2'>
-          <OrderButton onClick={handleOrderItem} add={true} img={Order} title="incluir"/>
+          <OrderButton onClick={handleOrderItem} img={Order} title="incluir"/>
         </div>
       </section>
       </div>
