@@ -55,7 +55,7 @@ export function SignIn(){
           disabled={isLoading}
         />
 
-        <Link href="/register">Criar uma conta</Link>
+        <Link to="/register">Criar uma conta</Link>
       </form>
     </Container>
   );
