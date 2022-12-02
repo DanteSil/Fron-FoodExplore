@@ -38,6 +38,8 @@ export function Card({setFavoriteDishes, setOrderItems, id, handleDetails, favor
 
     setOrderItems(prevState => [...prevState, item]);
     setAmount(1);
+
+    alert("Produto adicionado ao carrinho!")
   };
 
   const [favorite, setFavorite] = useState(() => {

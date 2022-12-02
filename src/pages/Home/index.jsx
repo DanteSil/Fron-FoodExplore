@@ -42,6 +42,7 @@ export function Home() {
   const [desserts, setDesserts] = useState([]);
   const [favDesserts, setFavDesserts] = useState([]);
 
+  // items add on cart
   const [orderItem, setOrderItems] = useState(() => {
     const orderData = localStorage.getItem("@foodexplore:order");
     return orderData ? JSON.parse(orderData) : [];
@@ -251,7 +252,7 @@ export function Home() {
               desserts.map(dessert => {
                 return (
                   <Card
-                    setOrderItems={setOrderItems} 
+                  setOrderItems={setOrderItems} 
                   key={dessert.id}
                   title={dessert.name}
                   description={dessert.description}
