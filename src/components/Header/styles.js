@@ -14,6 +14,10 @@ export const Container = styled.div`
     color: ${({theme}) => theme.COLORS.WHITE};
   }
 
+  .top{
+    display: none;
+  }
+
   .top .logo a{
     display: block;
   }
@@ -110,6 +114,10 @@ export const Container = styled.div`
     font-size: 1.4rem;
     line-height: 2.4rem;
     
+  }
+
+  .hidden{
+    display: none;
   }
 
   .list .listItems {

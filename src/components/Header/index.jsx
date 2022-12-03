@@ -11,7 +11,7 @@ import { api } from '../../service/api'
 
 import { useState, useEffect } from 'react';
 import { useAuth } from '../../hooks/auth'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export function Header({toggleFavorite, quantity }) {
   const { user, signOut } = useAuth();
@@ -124,15 +124,15 @@ export function Header({toggleFavorite, quantity }) {
         <nav className='list'>
           <ul className='listItems'>
             <li>
-              {admin ? <a href="/">Novo Prato</a> : <a onClick={toggleFavorite}>Meus favoritos</a>}
+              {admin ? <Link to="/new">Novo Prato</Link> : <Link onClick={toggleFavorite}>Meus favoritos</Link>}
             </li>
             <li>
-              {admin ? <a href="/">Ver pedidos</a> : <a onClick={handleOrder}>Meu pedido</a>}
+              {admin ? <Link to="/order">Ver pedidos</Link> : <Link onClick={handleOrder}>Meu pedido</Link>}
             </li>
-            <li>
-              {admin ? '' : <a href="/orders">Ver pedidos</a>}
+            <li className={admin ? 'hidden' : ''}>
+              {admin ? '': <Link to="/orders">Ver pedidos</Link>}
             </li>
-            <li><a href="/">Sair</a></li>
+            <li><Link to="/">Sair</Link></li>
           </ul>
         </nav>
       </div>

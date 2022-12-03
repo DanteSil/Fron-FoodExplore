@@ -21,10 +21,8 @@ export const Container = styled.div`
     width: 95vw;
     padding-inline: 3.5rem;
     margin-bottom: 6.2rem;
-  }
 
-  .banner-content::-webkit-scrollbar {
-    display: none;
+    padding-bottom: 15px;
   }
 
   .slogan{
