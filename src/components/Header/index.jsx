@@ -127,10 +127,10 @@ export function Header({toggleFavorite, quantity }) {
               {admin ? <Link to="/new">Novo Prato</Link> : <Link onClick={toggleFavorite}>Meus favoritos</Link>}
             </li>
             <li>
-              {admin ? <Link to="/order">Ver pedidos</Link> : <Link onClick={handleOrder}>Meu pedido</Link>}
+              {admin ? <Link to="/order">Ver pedidos</Link> : <Link to="/orders">Ver pedidos</Link>}
             </li>
             <li className={admin ? 'hidden' : ''}>
-              {admin ? '': <Link to="/orders">Ver pedidos</Link>}
+              {admin ? '': <Link to="/checkout">Meu pedido</Link>}
             </li>
             <li><a onClick={handleSignOut}>Sair</a></li>
           </ul>
