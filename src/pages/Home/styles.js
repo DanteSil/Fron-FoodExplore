@@ -115,6 +115,12 @@ export const Container = styled.div`
 }
 }
 
+@media(min-width: 1025px){
+  .banner-content::-webkit-scrollbar{
+    display: none;
+  }
+}
+
 @media(min-width: 768px) {
   .container-left, .container-right{
   background: linear-gradient(90deg, rgba(0, 10, 15, 0.272541) 0%, #000A0F 100%);

@@ -132,7 +132,7 @@ export function Header({toggleFavorite, quantity }) {
             <li className={admin ? 'hidden' : ''}>
               {admin ? '': <Link to="/orders">Ver pedidos</Link>}
             </li>
-            <li><Link to="/">Sair</Link></li>
+            <li><a onClick={handleSignOut}>Sair</a></li>
           </ul>
         </nav>
       </div>

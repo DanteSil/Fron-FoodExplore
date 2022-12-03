@@ -14,10 +14,6 @@ export const Container = styled.div`
     color: ${({theme}) => theme.COLORS.WHITE};
   }
 
-  .top{
-    display: none;
-  }
-
   .top .logo a{
     display: block;
   }

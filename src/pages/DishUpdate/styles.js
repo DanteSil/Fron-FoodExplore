@@ -230,4 +230,74 @@ export const Container = styled.div`
       }
     }
 }
+
+@media(max-width: 1024px){
+    main{
+      width: 95.5rem;
+    }
+  }
+
+  @media(max-width: 768px){
+    main{
+      width: 66.5rem;
+    }
+
+    .btn-footer{
+      gap: 1rem;
+    }
+  }
+
+  @media(max-width: 425px){
+    main{
+      width: 40rem;
+    }
+
+    .btn-footer{
+          gap: 1rem;
+        }
+
+    form{
+      .area-wrapper{
+        flex-direction: column;
+        align-items: flex-start;
+
+        .input-wrapper{
+          align-self: baseline;
+          width: 100%;
+        }
+      }
+
+      .add-food{
+        align-self: center;
+        width: 40rem;
+      }
+    }
+  }
+
+  @media(max-width: 375px){
+    main{
+      width: 35rem;
+      .btn-footer{
+          gap: 1rem;
+        }
+    }
+
+    .add-food {
+        max-width: 35rem;
+      }
+  }
+
+  @media(max-width: 320px){
+    main{
+      width: 30rem;
+      form{
+        .add-food {
+          width: 30rem;
+        }
+        .btn-footer{
+          gap: 1rem;
+        }
+      }
+    }
+  }
 `
