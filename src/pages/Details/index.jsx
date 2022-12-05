@@ -37,6 +37,7 @@ export function Details() {
 
     setOrderItems(prevState => [...prevState, item]);
     setAmount(1);
+    alert("Produto adicionado ao carrinho!")
   };
 
   // set item quantity

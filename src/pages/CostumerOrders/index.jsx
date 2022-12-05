@@ -5,10 +5,12 @@ import { Footer } from '../../components/Footer';
 import { useState, useEffect } from "react";
 
 import { api } from "../../service/api";
+import { useAuth } from "../../hooks/auth";
 
 export function CostumerOrders() {
   //orders already made
   const [items, setItems] = useState([]);
+  const { user } = useAuth()
 
   // get quantity in cart
   const [orders, setOrders] = useState(() => {
@@ -18,7 +20,7 @@ export function CostumerOrders() {
 
   useEffect(()=> {
     async function fetchOrder() {
-      const response = await api.get('/orders');
+      const response = await api.get(`/orders/${user.id}`);
       const data = response.data;
 
       const newData = data.map(data => {

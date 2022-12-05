@@ -109,7 +109,6 @@ export const Container = styled.div`
     font-weight: 500;
     font-size: 1.4rem;
     line-height: 2.4rem;
-    
   }
 
   .hidden{

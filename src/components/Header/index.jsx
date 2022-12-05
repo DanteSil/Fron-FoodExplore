@@ -72,14 +72,14 @@ export function Header({toggleFavorite, quantity }) {
     <Container >
       <div className='top'>
         <div className='logo'>
-          <a href="/">
+          <Link to="/">
             <Logo />
-          </a>
+          </Link>
         </div>
         
         <div className='links'>
-          {admin ? <a href='/new'>Novo prato</a> :  <a onClick={toggleFavorite}>Meus Favoritos</a>}
-          {admin ? ' ' : <a href="/orders" >Ver pedidos</a>}
+          {admin ? <Link to='/new'>Novo prato</Link> :  <a onClick={toggleFavorite}>Meus Favoritos</a>}
+          {admin ? '' : <Link to="/orders" >Ver pedidos</Link>}
         </div>
 
         <div className='search-bar'>
