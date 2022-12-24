@@ -72,7 +72,7 @@ The idea was to create an online menu for a fictional restaurant. This is the fi
 
 ```bash
 # Clone this repository
-$ git clone git@github.com:exodogurgel/food-explorer-backend.git
+$ git clone git@github.com:DanteSil/API-foodExplore.git
 _________________________________________________________
 # Access the project folder in your terminal
 $ cd API-foodExplore 
@@ -97,7 +97,7 @@ _________________________________________________________
 
 ```bash
 # Clone this repository
-$ git clone git@github.com:exodogurgel/food-explorer-frontend.git
+$ git clone git@github.com:DanteSil/Front-FoodExplore.git
 _________________________________________________________
 # Access the project folder in your terminal
 $ cd Front-FoodExplore
