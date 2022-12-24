@@ -57,7 +57,7 @@ The idea was to create an online menu for a fictional restaurant. This is the fi
 
 ## Deployment
 
-[Food Explore](rocketfooodexplore.netlify.app)
+[Food Explore](https://rocketfooodexplore.netlify.app/)
 
 ---
 
